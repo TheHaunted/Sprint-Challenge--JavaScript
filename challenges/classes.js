@@ -16,7 +16,21 @@ class CuboidMaker {
         return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
     }
 }
-let cuboid = new CuboidMaker(4, 5, 5);
 
+class CubeMaker extends CuboidMaker {
+    constructor(length, width, height){
+        super(length, width, height);
+    }
+    volume(){
+        return this.length * this.width * this.height;
+    }
+    surfaceArea(){
+        return this.length * this.width * 6;
+    }
+}
+let cuboid = new CuboidMaker(4, 5, 5);
+let cube = new CubeMaker(2, 2, 2);
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
+console.log(cube.volume());
+console.log(cube.surfaceArea());
