@@ -46,9 +46,7 @@ console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-tyrannosaurus.roar = function(){
-  return "RAWERSRARARWERSARARARRRR!";
-};
+tyrannosaurus.roar = () => "RAWERSRARARWERSARARARRRR!";
 console.log(tyrannosaurus.roar());
 
 
@@ -71,9 +69,7 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-graduates.forEach(function(graduate){
-  universities.push(graduate.university);
-});
+graduates.forEach(graduate => universities.push(graduate.university));
 console.log(universities.sort());
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -83,18 +79,14 @@ Name email@example.com
 
 Log the result of your new array. */
 const contactInfo = [];
-graduates.forEach(function(graduate){
-  contactInfo.push(`${graduate.first_name} ${graduate.email}`);
-})
+graduates.forEach(graduate => contactInfo.push(`${graduate.first_name} ${graduate.email}`));
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
 const allUnis = [];
-graduates.forEach(function(graduate){
-  allUnis.push(graduate.university);
-});
+graduates.forEach(graduate => allUnis.push(graduate.university));
 allUnis.forEach(function(school){
   if(school.includes('Uni')){
     uni.push(school);
@@ -125,9 +117,8 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
-zooAnimals.forEach(function(animal){
-  animalNames.push(`${animal.animal_name}, ${animal.scientific_name}`);
-});
+zooAnimals.forEach(animal => animalNames.push(`${animal.animal_name}, ${animal.scientific_name}`)
+);
 console.log(animalNames);
 
 /* Request 2: .map()    
@@ -136,9 +127,8 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-lowerCase = zooAnimals.map(function(animal){
-  return animal.animal_name.toLowerCase();
-});
+lowerCase = zooAnimals.map(animal => animal.animal_name.toLowerCase()
+);
 console.log(lowerCase); 
 
 /* Request 3: .filter() 
@@ -147,9 +137,7 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 let lowerPopulation = [];
-lowerPopulation = zooAnimals.filter(function(animal){
-  return animal.population < 5;
-})
+lowerPopulation = zooAnimals.filter(animal => animal.population < 5)
 console.log(lowerPopulation);
 
 /* Request 4: .reduce() 
